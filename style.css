@@ -4,12 +4,14 @@
     --sek1-color: #74C5FF;
     --sek2-color: #FF6D8D;
     --sek3-color: #2580C1;
+    --sek4-color: #FFB9CA;
     --head-color: #FFFFFF;
     --footer-color: #FFF2D6;
     --button-color: #6A19F5;
     --donate-color: #F9523B;
     font-family: 'Work Sans' sans-serif;
     background-color: var(--head-color);
+    margin: 20px, 60px;
 }
 
 h1{
@@ -21,6 +23,16 @@ h1{
     color: var(--text-color);
 }
 
+.head2{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 130%;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--head-color);
+}
+
 .head{
     background-color: var(--head-color);
 }
@@ -30,6 +42,7 @@ h1{
 }
 
 .sec1{
+    background-color: var(--sek4-color);
     background-color: var(--sek1-color);
 }
 
@@ -93,13 +106,16 @@ h2{
     font-style: normal;
     font-weight: 600;
     font-size: 1.8rem;
-    line-height: 117%;
-    text-transform: uppercase;
+    line-height: 270%;
     background-color: var(--button-color);
     color: var(--head-color);
     text-decoration: none;
-    /*border: radius 5px;
-    border: */
+    border-radius: 5px;
+    width: 345px;
+    height: 50px;
+    margin: 0 auto;
+    display: block;
+    text-align:center;
 }
 
 .text3{
@@ -135,10 +151,19 @@ h2{
     font-weight: 600;
     font-size: 1.8rem;
     line-height: 117%;
-    text-transform: uppercase;
     color: var(--head-color);
-    background-color: var(--donate-color);
+    background: var(--donate-color);
     text-decoration: none;
-    /*border: radius 5px;
-    border: */
+    width: 162px;
+    height: 50.08px;
+    border-radius: 5px;
+}
+
+.text4{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 150%;
+    color: var(--head-color);
+    text-align:left;
 }
