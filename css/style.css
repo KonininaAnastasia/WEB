@@ -43,6 +43,10 @@ h2{
     text-transform: uppercase;
 }
 
+.head2{
+    color: var(--head-color);
+}
+
 
 header{
     background-color: var(--head-color);
@@ -77,7 +81,7 @@ footer{
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 150%;
-    text-align: left;
+    text-align: center;
 }
 
 .buttonlink{
@@ -103,9 +107,14 @@ a{
     font-size: 1.6rem;
     line-height: 130%;
     text-decoration: none;
-    color: var(--text-color);
 }
 
+.listhead{
+    line-height: 119%;
+    border-radius: 5px;
+    padding: 1em;
+    margin-right: 2em;
+}
 
 .donate{
     font-style: normal;
