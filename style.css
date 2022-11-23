@@ -11,7 +11,19 @@
     --donate-color: #F9523B;
     font-family: 'Work Sans' sans-serif;
     background-color: var(--head-color);
+    margin: 0;
 }
+
+/* li{
+    display: inline;
+} */
+
+
+/* ul{
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+} */
 
 h1{
     font-style: normal;
@@ -32,11 +44,11 @@ h1{
     color: var(--head-color);
 }
 
-.head{
+header{
     background-color: var(--head-color);
 }
 
-.footer{
+footer{
     background-color: var(--footer-color);
 }
 
@@ -108,8 +120,9 @@ h2{
     color: var(--head-color);
     text-decoration: none;
     border-radius: 5px;
-    width: 345px;
-    height: 50px;
+    max-width: 345px;
+    width: 100%;
+    max-height: 50px;
     margin: 0 auto;
     display: block;
     text-align:center;
@@ -141,6 +154,9 @@ h2{
     line-height: 119%;
     color: var(--text-color);
     text-decoration: none;
+    border-radius: 5px;
+    padding: 1em;
+    margin-right: 2em;
 }
 
 .donate{
@@ -151,9 +167,10 @@ h2{
     color: var(--head-color);
     background: var(--donate-color);
     text-decoration: none;
-    width: 162px;
-    height: 50.08px;
     border-radius: 5px;
+    padding: 1em;
+    display: inline-block;
+    text-align: center;
 }
 
 .text4{
