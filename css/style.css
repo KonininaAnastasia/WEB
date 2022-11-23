@@ -10,7 +10,6 @@
     --button-color: #6A19F5;
     --donate-color: #F9523B;
     font-family: 'Work Sans' sans-serif;
-    background-color: var(--head-color);
     margin: 0;
     color: var(--text-color);
 }
@@ -41,6 +40,10 @@ h2{
     line-height: 130%;
     text-align: center;
     text-transform: uppercase;
+}
+
+.textwhite{
+    color: var(--head-color);
 }
 
 .head2{
@@ -128,4 +131,8 @@ a{
     padding: 1em;
     display: inline-block;
     text-align: center;
+}
+
+.textOp2{
+    opacity: 0.3;
 }
