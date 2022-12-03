@@ -20,7 +20,6 @@ h1{
     font-weight: 400;
     line-height: 117%;
     text-align: center;
-    margin: 0;
 }
 
 h2{
@@ -30,8 +29,11 @@ h2{
     line-height: 130%;
     text-align: center;
     text-transform: uppercase;
-    margin: 0;
-    padding-top: 5rem;
+    margin-top: 5rem;
+}
+
+.h2sec2{
+    margin-top: 0rem;
 }
 
 .title1{
@@ -40,16 +42,12 @@ h2{
     font-size: 2.86rem;
     line-height: 130%;
     text-align: left;
-    padding-top: 3rem;
+    margin-top: 3rem;
 }
 
 .head2{
     color: var(--head-color);
-    padding-top: 3rem;
-}
-
-.h2sec2{
-    padding-top: 10rem;
+    margin-top: 3rem;
 }
 
 .textsec2{
@@ -58,9 +56,8 @@ h2{
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 150%;
-    margin: 0;
-    padding-top: 5rem;
-    padding-bottom: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
 }
 
 .text2sec2{
@@ -69,8 +66,7 @@ h2{
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 150%;
-    margin: 0;
-    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .textOp{
@@ -80,8 +76,8 @@ h2{
     font-size: 1.4rem;
     line-height: 150%;
     opacity: 0.7;
-    margin: 0;
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+    margin-top: 0rem;
 }
 
 .textwhite{
@@ -91,9 +87,7 @@ h2{
     font-size: 1.4rem;
     line-height: 150%;
     text-align: left;
-    margin: 0;
-    padding-top: 2rem;
-    padding-bottom: 9.6rem;
+    margin-top: 2rem;
 }
 
 .text{
@@ -102,9 +96,8 @@ h2{
     font-size: 1.4rem;
     line-height: 150%;
     text-align: left;
-    margin: 0;
-    padding-top: 2rem;
-    padding-bottom: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
 }
 
 .textOp2{
@@ -114,9 +107,7 @@ h2{
     font-size: 1.4rem;
     line-height: 150%;
     text-align: left;
-    margin: 0;
-    padding-top: 3rem;
-    padding-bottom: 9rem;
+    margin-top: 3rem;
 }
 
 .textfooter{
@@ -125,9 +116,8 @@ h2{
     font-size: 1.4rem;
     line-height: 150%;
     text-align: center;
-    margin: 0;
-    padding-top: 5rem;
-    padding-bottom: 1rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
 }
 
 header{
@@ -138,6 +128,7 @@ footer{
     background-color: var(--footer-color);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    padding-bottom: 9rem;
 }
 
 .sec1{
@@ -153,6 +144,7 @@ footer{
     padding-bottom: 10rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    padding-top: 10rem;
 }
 
 .sec3{
@@ -160,18 +152,21 @@ footer{
     padding-top: 10rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    padding-bottom: 9.6rem;
 }
 
 .sec4{
     padding-top: 5rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    padding-bottom: 10rem;
 }
 
 .sec5{
     padding-top: 7rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    padding-bottom: 10rem;
 }
 
 footer{
@@ -191,7 +186,6 @@ footer{
     margin: auto;
     display: block;
     text-align: center;
-    margin-bottom: 10rem;
 }
 
 .buttonlink2{
@@ -270,8 +264,12 @@ ol{
     margin-left: 7rem;
 }
 
-.li{
-    padding-bottom: 3.5rem;
+.li1{
+    list-style-type: none;
+}
+
+.li2{
+    list-style-type: none;
 }
 
 img{
@@ -287,8 +285,7 @@ img{
 
 .imgheadmenu{
     display: inline;
-    margin-right: 2rem;
-    padding: 2rem 2rem 2rem 19.8rem;
+
 }
 
 
