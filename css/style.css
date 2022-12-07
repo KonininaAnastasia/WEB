@@ -14,6 +14,7 @@
     color: var(--text-color);
 }
 
+
 h1{
     font-style: normal;
     font-size: 3.5rem;
@@ -120,9 +121,88 @@ h2{
     margin-bottom: 1rem;
 }
 
+
+
+
+
+.header_list{
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 header{
     background-color: var(--head-color);
 }
+
+.header_body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container{
+    max-width: 1455px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+li{
+    display: inline;
+    list-style: none;
+    margin: 0 0 0 6rem;
+}
+
+.donate{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 117%;
+    color: var(--head-color);
+    background: var(--donate-color);
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 1em;
+    display: block;
+    text-align: center;
+    line-height: inherit;
+    margin: 1.5rem;
+    width: 16.2rem;
+}
+
+.listhead{
+    line-height: 119%;
+    padding: 1em;
+    margin-right: 2em;
+    display: block;
+    line-height: inherit;
+    align-items: center;
+}
+
+.imgheadlogo{
+    display: block;
+    margin: 1.5rem;
+}
+
+.menu{
+    display: block;
+    border: 0;
+    background-color: var(--head-color);
+}
+
+
+
+
+
+
+
+
 
 footer{
     background-color: var(--footer-color);
@@ -133,45 +213,30 @@ footer{
 
 .sec1{
     background-color: var(--sek1-color);
-    padding-bottom: 8.6rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 7.5rem;
+    padding: 7.5rem 1.5rem 8.6rem 1.5rem;
+    display: flex;
 }
 
 .sec2{
     background-color: var(--sek2-color);
-    padding-bottom: 10rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 10rem;
+    padding: 10rem 1.5rem 10rem 1.5rem;
 }
 
 .sec3{
     background-color: var(--sek3-color);
-    padding-top: 10rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-bottom: 9.6rem;
+    padding: 10rem 1.5rem 10rem 9.6rem;
 }
 
 .sec4{
-    padding-top: 5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-bottom: 10rem;
+    padding: 5rem 1.5rem 10rem 1.5rem;
 }
 
 .sec5{
-    padding-top: 7rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-bottom: 10rem;
+    padding: 7rem 1.5rem 10rem 1.5rem;
 }
 
 footer{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 0 1.5rem;
 }
 
 .buttonlink{
@@ -221,30 +286,6 @@ a{
     margin-bottom: 3rem;
 }
 
-.ali{
-    display: inline;
-}
-
-.listhead{
-    line-height: 119%;
-    border-radius: 5px;
-    padding: 1em;
-    margin-right: 2em;
-}
-
-.donate{
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.8rem;
-    line-height: 117%;
-    color: var(--head-color);
-    background: var(--donate-color);
-    text-decoration: none;
-    border-radius: 5px;
-    padding: 1em;
-    display: inline-block;
-    text-align: center;
-}
 
 .libutt{
     display: inline;
@@ -278,14 +319,15 @@ img{
     padding-top: 0rem;
 }
 
-.imgheadlogo{
-    display: inline;
-    margin: 1.5rem;
+
+@media (min-width:767px){
+    .menu{
+        display: none;
+    }
+    .header_list{
+        display: flex;
+    }
 }
 
-.imgheadmenu{
-    display: inline;
-
-}
 
 
