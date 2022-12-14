@@ -353,6 +353,8 @@ footer{
     margin: auto;
     display: block;
     text-align: center;
+    background: linear-gradient(45deg, #d77be8, #4b65ce);
+    box-shadow: 5px 14px 22px #d77be8;
 }
 
 a{
@@ -681,6 +683,6 @@ img{
         font-size: 96px;
         line-height: 114%;
         text-align: left;
-        margin: 0;
+        margin-bottom: 3rem;
     }
 }
