@@ -428,7 +428,7 @@ img{
 
 
 
-@media (min-width:767px){
+@media screen and (min-width:767px){
     .menu{
         display: none;
     }
@@ -479,10 +479,9 @@ img{
 
 
 
-
     h1{
         font-weight: 500;
-        font-size: 96px;
+        font-size: 60px;
         line-height: 114%;
         text-align: left;
         margin: 0;
@@ -626,22 +625,31 @@ img{
 
 
 
-
+    .wrapper{
+        max-width: 1920px;
+        margin: 0 auto;
+    }
     .flex5{
         display: flex;
         flex-direction:row;
-        justify-content:space-around;
+        justify-content: space-around;
         align-items: center;
+        gap: 30px;
+
     }
     .flex5-1{
         max-width: 30.8rem;
+        flex-grow: 1;
+    }
+    .flex5-2{
+        flex-grow: 1;
     }
     .imgfooterlogo{
         max-width: 32.1rem;
         max-height: 16rem;
     }
-    .ul2{
-        margin-left: 17.7rem;
+    .flex5-3{
+        flex-grow: 1;
     }
     .textOp2-1{
         display: block;
@@ -661,12 +669,18 @@ img{
         text-align: left;
         font-size: 2rem;
     }
-    .imglast{
-        margin-right: 2rem;
-    }
     footer{
         padding-bottom: 3.8rem;
         max-height: 492px;
     }
 
+}
+@media screen and (min-width:1024px){
+    h1{
+        font-weight: 500;
+        font-size: 96px;
+        line-height: 114%;
+        text-align: left;
+        margin: 0;
+    }
 }
