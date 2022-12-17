@@ -129,6 +129,9 @@ h2{
 }
 
 
+
+
+
 .nav-button_wrapper
 {
     display: none;
@@ -382,8 +385,17 @@ a{
 
 .libutt{
     display: inline;
-    padding-right: 1rem;
     padding-left: 1rem;
+    padding-right: 1rem;
+
+}
+
+.circle_button{
+    width: 0.5rem;
+    height: 1.5rem;
+    border: 0.2rem solid var(--text-color);
+    border-radius: 50%;
+    background-color: transparent;
 }
 
 ol{
