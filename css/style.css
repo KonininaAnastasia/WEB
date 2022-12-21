@@ -203,6 +203,7 @@ li{
     text-align: center;
     justify-content: center;
     padding: 1.5rem 4.2rem;
+    transition: transform 0.5s;
 }
 
 .listhead{
@@ -352,6 +353,7 @@ footer{
     text-align: center;
     background: linear-gradient(45deg, #d77be8, #4b65ce);
     box-shadow: 5px 14px 22px #d77be8;
+    transition: transform 0.5s;
 }
 
 a{
@@ -424,6 +426,7 @@ img{
     padding: 1.9rem 5rem;
     max-width: 21.5rem;
     height: inherit;
+    transition: transform 0.5s;
 }
 
 
@@ -456,6 +459,7 @@ label{
 .otpravka{
     border-radius: 5px;
     width: 10rem;
+    transition: background-color 0.6s;
 }
 
 fieldset{
@@ -524,19 +528,19 @@ input:focus {
 }
 
 .button_yellow:active {
-    color: var(--text-color);
+    color: var(--head-color);
 }
 
 .donate:hover {
-    transform: scale(1.01,1.01);
+    transform: scale(1.05,1.05);
 }
 
 .button_yellow:hover {
-    transform: scale(1.01,1.01);
+    transform: scale(1.05,1.05);
 }
 
 .buttonlink:hover{
-    transform: scale(1.01,1.01);
+    transform: scale(1.03,1.03);
 }
 
 .strelka:hover{
@@ -593,6 +597,7 @@ input:focus {
         border: 0;
         background-color: transparent;
         display: flex;
+        transition: transform 0.5s;
     }
     .header_body{
         justify-content: space-around;
