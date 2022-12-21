@@ -459,7 +459,11 @@ label{
 .otpravka{
     border-radius: 5px;
     width: 10rem;
+    border: 0;
     transition: background-color 0.6s;
+    background: linear-gradient(45deg, #d77be8, #6e85e3);
+    box-shadow: 0px 0px 22px #d77be8;
+    margin: 1.5rem;
 }
 
 fieldset{
@@ -504,7 +508,7 @@ fieldset{
 }
 
 .otpravka:hover {
-    background-color: #aaa;
+    background: linear-gradient(45deg, #6e85e3, #d77be8);
 }
 
 input:focus {
