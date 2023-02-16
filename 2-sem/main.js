@@ -1,87 +1,93 @@
-// console.log("1 задание");
+console.log("1 задание");
 
-// let v_kmch = prompt("Километры в час");
-// let v_mc = prompt("Метры в секунду");
+let v_kmch = prompt("Километры в час");
+let v_mc = prompt("Метры в секунду");
 
-// console.log(`${v_kmch} км/ч соответствует ${v_kmch/3.6} м/с`);
-// console.log(`${v_mc} м/с соответствует ${v_mc*3.6} км/ч`);
+console.log(`${v_kmch} км/ч соответствует ${v_kmch/3.6} м/с`);
+console.log(`${v_mc} м/с соответствует ${v_mc*3.6} км/ч`);
 
-// console.log("2 задание");
+console.log("2 задание");
 
-// let a = prompt("Сторона 1");
-// let b = prompt("Сторона 2");
-// let c = prompt("Сторона 3");
+let a = prompt("Сторона 1");
+let b = prompt("Сторона 2");
+let c = prompt("Сторона 3");
 
-// if (a+b<c && a+c<b && b+c<a) {
-//     console.log("треугольник не существует");
-// } else {
-//     let p = (a+b+c)/2;
-//     let s = Math.sqrt(p*(p-a)*(p-b)*(p-c));
-//     console.log("треугольник существует");
-//     console.log(`периметр = ${p*2}`);
-//     console.log(`площадь = ${s}`);
-//     console.log(`соотношение = ${p*2/s}`);
-// }
+if (a+b<c && a+c<b && b+c<a) {
+    console.log("треугольник не существует");
+} else {
+    let p = (a+b+c)/2;
+    let s = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+    console.log("треугольник существует");
+    console.log(`периметр = ${p*2}`);
+    console.log(`площадь = ${s}`);
+    console.log(`соотношение = ${p*2/s}`);
+}
 
 
-// console.log("3 задание");
+console.log("3 задание");
 
-// let num = prompt("Введите число");
+let num = prompt("Введите число");
 
-// while (isNaN(num))
-// {
-//     num = prompt("Введите число");
-// }
+while (isNaN(num))
+{
+    num = prompt("Введите число");
+}
 
-// for (let i=0;i<=num;i++){
-//     if (i==0){
-//         console.log(`${i} buzz`); 
-//     } else if (i%2===0 && i%5!==0){
-//         console.log(`${i} buzz`); 
-//     } else if(i%2!==0 && i%5!==0){
-//         console.log(`${i} fizz`); 
-//     } else if(i%2!==0 && i%5===0){
-//         console.log(`${i} fizz buzz`);
-//     } else if(i%2===0 && i%5!==0){
-//         console.log(`${i} fizz`);
-//     } else if(i%2===0 && i%5===0){
-//         console.log(`${i} fizz buzz`);
-//     }
-// }
+for (let i=0;i<=num;i++){
+    if (i==0){
+        console.log(`${i} buzz`); 
+    } else if (i%2===0 && i%5!==0){
+        console.log(`${i} buzz`); 
+    } else if(i%2!==0 && i%5!==0){
+        console.log(`${i} fizz`); 
+    } else if(i%2!==0 && i%5===0){
+        console.log(`${i} fizz buzz`);
+    } else if(i%2===0 && i%5!==0){
+        console.log(`${i} fizz`);
+    } else if(i%2===0 && i%5===0){
+        console.log(`${i} fizz buzz`);
+    }
+}
 
-// console.log("4 задание");
+console.log('4 Задание');
 
-// console.log(`\n * \n ## \n *** \n #### \n ***** \n ###### \n ******* \n ######## \n ********* \n ########## \n ||`);
+let str;
+for (let i=1; i<13; i++){
+   if(i%2===0) str="#";
+   else str="*";
+   console.log(`${str.repeat(i)}`);
+}
+console.log('||');
 
-// console.log("5 задание");
+console.log("5 задание");
 
-// let number = prompt("Введите число");
+let number = prompt("Введите число");
 
-// let zagadka = 7;
+let zagadka = 7;
 
-// while (number!=zagadka){
-//     if (number>zagadka){
-//         console.log(`ваше число больше`);
-//     }
-//     if (number<zagadka){
-//         console.log(`ваше число меньше`);
-//     }
-//     number = prompt("Введите число");
-// }
+while (number!=zagadka){
+    if (number>zagadka){
+        console.log(`ваше число больше`);
+    }
+    if (number<zagadka){
+        console.log(`ваше число меньше`);
+    }
+    number = prompt("Введите число");
+}
 
-// console.log(`Угадано`);
+console.log(`Угадано`);
 
-// console.log("6 задание");
+console.log("6 задание");
 
-// let n = prompt("Введите n");
-// let x = prompt("Введите x");
-// let y = prompt("Введите y");
+let n = prompt("Введите n");
+let x = prompt("Введите x");
+let y = prompt("Введите y");
 
-// if (n%x===0 && n%y===0){
-//     console.log(`n = ${n}, x = ${x}, y = ${y} => true`);
-// } else {
-//     console.log(`n = ${n}, x = ${x}, y = ${y} => false`);
-// }
+if (n%x===0 && n%y===0){
+    console.log(`n = ${n}, x = ${x}, y = ${y} => true`);
+} else {
+    console.log(`n = ${n}, x = ${x}, y = ${y} => false`);
+}
 
 console.log("7 задание");
 
