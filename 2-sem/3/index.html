@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reseter.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Лаба №3</h1>
+         <button id = "open_modal">Зарегистрироваться</button>
+         <div id="myModal" class="modal">
+             <div class="modal-content">
+                 <button class="close">&times;</button> 
+                 <form>
+                     <ul>
+                         <li>
+                           <label for="email">Почта:</label>
+                           <input type="email" name="email" required placeholder="email@mail.ru" id="email">
+                           <p class="error"></p>
+                         </li>
+                         <li>
+                           <label for="password">Пароль:</label>
+                           <input type="password" name="password" required minlength="6" id="password">
+                           <p class="error"></p>
+                         </li>
+                       </ul>
+                       <button type="button" id="button2">Показать пароль</button>
+                     <button type="submit" id="button3">Отправить</button>
+                 </form> 
+             </div>
+         </div>
+   </header>
+   <script src="main.js"></script>
+</body>
+</html>
