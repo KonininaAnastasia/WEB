@@ -24,3 +24,11 @@
     height: 20px;
     border: 0;
 }
+
+li{
+    padding-bottom: 20px;
+}
+
+p{
+    font-size:10px;
+}
