@@ -35,7 +35,9 @@ const requestListener = function (req, res) {
                     data += chunk
                 })
                 req.on('end', () => {
+                    if (data){
                     comments.push(data)
+                    }
                     res.end(JSON.stringify(comments))
                 })
             }else{
