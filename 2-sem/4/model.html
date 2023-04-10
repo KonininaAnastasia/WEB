@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Three.js</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<h1></h1>
+
+<div class="canvas-wrapper" id="canvas-wrapper"></div>
+
+<form id="color-change">
+    <label><input type="radio" value="#fff" name="color" />Белый</label>
+    <label><input type="radio" value="red" name="color" />Красный</label>
+    <label><input type="radio" value="green" name="color" />Зеленый</label>
+    <label><input type="radio" value="blue" name="color" />Синий</label>
+    <label><input type="radio" value="BlueViolet" name="color" checked/>Фиолетовый</label>
+</form>
+<form id="light-change">
+    <label><input type="radio" value="1" name="light" id="pointlight" />Освещение 1</label>
+    <label><input type="radio" value="1" name="light" id="spotlight" />Освещение 2</label>
+    <label><input type="radio" value="1" name="light" id="doublelight" checked/>Освещение 3</label>
+    <label><input type="radio" value="0" name="light" id="nulllight" />Без освещения</label>
+</form>
+
+<script type="module" src="./main.js" defer></script>
+
+</body>
+</html>

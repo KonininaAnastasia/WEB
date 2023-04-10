@@ -29,7 +29,6 @@ const requestListener = function (req, res) {
         case "/comments":
             if (method === "POST"){
                 res.writeHead(200, {'Content-Type': 'text/plain'})
-
                 let data = ''
                 req.on('data', (chunk) => {
                     data += chunk
