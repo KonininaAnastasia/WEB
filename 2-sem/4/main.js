@@ -135,40 +135,34 @@ document.forms[0].addEventListener('change', (e) => {
 })
 
 //изменение света
-
-// const light1 = document.getElementById("pointlight");
-// const light2 = document.getElementById("spotlight");
-// const light3 = document.getElementById("doublelight");
-// const nulllight = document.getElementById("nulllight");
-
-function changeLight(event) {
-
-    event.preventDefault();
-
-    if (document.getElementById("pointlight").checked){
-
-        pointlight.intensity.set(event.target.value);
-
-    } else if (document.getElementById("spotlight").checked){
-
-        spotLight.intensity.set(event.target.value);
-
-    } else if (document.getElementById("doublelight").checked){
-
-        pointlight.intensity.set(event.target.value);
-        spotLight.intensity.set(event.target.value);
-
-    } else if (document.getElementById("nulllight").checked){
-
-        pointlight.intensity.set(event.target.value);
-        spotLight.intensity.set(event.target.value);
-
-    }
-}
-
 document.forms[1].addEventListener('change', (e) => {
-    changeLight(e);
+    if(e.target.id === "1"){
+        if (pointlight.intensity = 1){
+            pointlight.intensity = 1;
+        }
+        if (spotLight.intensity = 1){
+            spotLight.intensity = 0;
+        }
+    } else if(e.target.id === "2"){
+        if (pointlight.intensity = 1){
+            pointlight.intensity = 0;
+        }
+        if (spotLight.intensity = 1){
+            spotLight.intensity = 1;
+        }
+    } else if(e.target.id === "3"){
+        if (pointlight.intensity = 1){
+            pointlight.intensity = 1;
+        }
+        if (spotLight.intensity = 1){
+            spotLight.intensity = 1;
+        }
+    } else if(e.target.id === "0"){
+        if (pointlight.intensity = 1){
+            pointlight.intensity = 0;
+        }
+        if (spotLight.intensity = 1){
+            spotLight.intensity = 0;
+        }
+    }
 })
-
-
-
