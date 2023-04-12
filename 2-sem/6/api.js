@@ -1,10 +1,10 @@
 import {Router} from "express";
-import {getAllStats, getMainText, getComments} from './main.js'
+import {getAllStats, getMainText, getComments} from './main.js';
 
-const router = Router()
+const router = Router();
 
-router.get('/', getMainText)
-router.get('/stats', getAllStats)
-router.post('/comments', getComments)
+router.get('/', getMainText);
+router.get('/stats', getAllStats);
+router.post('/comments', getComments);
 
-export default router
+export default router;

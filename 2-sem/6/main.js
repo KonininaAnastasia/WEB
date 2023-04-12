@@ -2,33 +2,33 @@ let users = {};
 let comments = ["comment"];
 
 export const getMainText = (req, res) => {
-    res.send('Hello')
+    res.send('Hello');
 }
 
 export const getAllStats = (req, res) => {
-    const name = req.headers['user-agent']
+    const name = req.headers['user-agent'];
     let firstHtml =
         '<table>' +
         '<tr>' +
         '<td>Name</td>' +
         '<td>Count request</td>' +
-        '</tr>'
-    let secondHtml = ''
+        '</tr>';
+    let secondHtml = '';
 
     if (users[name]) {
-        users[name] += 1
+        users[name] += 1;
     }else{
-        users[name] = 1
+        users[name] = 1;
     }
     for (const key in users) {
         secondHtml +=
             `<tr>
                 <td>${key}</td>
                 <td>${users[key]}</td>
-            </tr>`
+            </tr>`;
     }
-    let resHtml = firstHtml + secondHtml + '</table>'
-    res.send(resHtml)
+    let resHtml = firstHtml + secondHtml + '</table>';
+    res.send(resHtml);
 }
 
 export const getComments = (req, res) => {
