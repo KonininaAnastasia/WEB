@@ -93,13 +93,13 @@ tetr.position.set(-4, 0.5, -4);
 tetr.castShadow = true;
 scene.add(tetr);
 
-//общий свет
+//свет из одной точки во всех направлениях
 const pointlight = new THREE.PointLight("#ffffff", 1, 100);
 pointlight.position.set(0, 8, -15);
 pointlight.castShadow = true;
 scene.add(pointlight);
 
-//свет прожектор
+//свет их одной точки в одном направлении вдоль конуса
 const spotLight = new THREE.SpotLight("#ffffff");
 spotLight.position.set(5, 5, 5);
 spotLight.castShadow = true;
