@@ -19,7 +19,7 @@ scene.add(camera);
 
 //вертикальная плоскость
 const geometry = new THREE.PlaneGeometry(10, 5);
-const material = new THREE.MeshPhongMaterial({color: '#FCBAD3', dithering: true, side: THREE.DoubleSide});
+const material = new THREE.MeshPhongMaterial({color: '#FCBAD3', side: THREE.DoubleSide});
 const plane = new THREE.Mesh(geometry, material);
 plane.position.x = 0;
 plane.position.y = 2.5;
@@ -47,7 +47,7 @@ geometry1.setAttribute("position", new THREE.BufferAttribute(new Float32Array(ve
 geometry1.setIndex(indices);
 geometry1.computeVertexNormals();
 
-let material1 = new THREE.MeshPhongMaterial({ color: "#AA96DA", dithering: true, side: THREE.DoubleSide });
+let material1 = new THREE.MeshPhongMaterial({color: "#AA96DA", side: THREE.DoubleSide});
 
 let plane1 = new THREE.Mesh(geometry1, material1);
 plane1.position.set(-5, 0, -5);
@@ -57,7 +57,7 @@ scene.add(plane1);
 
 //куб
 const geometry2 = new THREE.BoxGeometry(3, 3, 3);
-const material2 = new THREE.MeshPhongMaterial({color: "BlueViolet", dithering: true, specular: 0x111111, shininess: 200});
+const material2 = new THREE.MeshPhongMaterial({color: "BlueViolet", side: THREE.DoubleSide});
 
 let cube;
 cube = new THREE.Mesh(geometry2, material2);
@@ -84,10 +84,10 @@ let indices1 = [
 
 let geometry3 = new THREE.BufferGeometry();
 geometry3.setAttribute("position", new THREE.BufferAttribute(new Float32Array(vertices1), 3));
-geometry3.setIndex(indices1);
-geometry3.computeVertexNormals();
+geometry3.setIndex(indices1); //Устанавливает .index - индекс буфера
+geometry3.computeVertexNormals(); //Вычисляет нормали вершин путем усреднения нормалей граней
 
-let material3 = new THREE.MeshPhongMaterial({color: "BlueViolet", dithering: true, side: THREE.DoubleSide});
+let material3 = new THREE.MeshPhongMaterial({color: "BlueViolet", side: THREE.DoubleSide});
 let tetr = new THREE.Mesh(geometry3, material3);
 tetr.position.set(-4, 0.5, -4);
 tetr.castShadow = true;
