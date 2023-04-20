@@ -38,6 +38,7 @@ const getComments = (req, res) => {
         comments.push(data)
     }
 
+    console.log("tesyt");
     res.send(comments)
 }
 
