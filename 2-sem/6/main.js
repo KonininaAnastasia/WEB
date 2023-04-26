@@ -1,11 +1,11 @@
 let users = {};
 let comments = ["comment"];
 
-const getMainText = (req, res) => {
+export const getMainText = (req, res) => {
     res.send('Hello');
 }
 
-const getAllStats = (req, res) => {
+export const getAllStats = (req, res) => {
     const name = req.headers['user-agent'];
     let firstHtml =
         '<table>' +
@@ -31,7 +31,7 @@ const getAllStats = (req, res) => {
     res.send(resHtml);
 }
 
-const getComments = (req, res) => {
+export const getComments = (req, res) => {
     let data = req.body;
 
     if (data){
@@ -42,8 +42,3 @@ const getComments = (req, res) => {
     res.send(comments)
 }
 
-module.exports = {
-    getMainText,
-    getAllStats,
-    getComments
-}

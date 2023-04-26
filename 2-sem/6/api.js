@@ -1,8 +1,6 @@
-
-const {Router} = require("express");
-const {getAllStats, getMainText, getComments} = require('./main.js');
-const { validateInput } = require("./Middleware.js");
-
+import {Router} from "express";
+import {getAllStats, getMainText, getComments} from './main.js'
+import {validateInput} from "./Middleware.js";
 
 const router = Router();
 
@@ -10,4 +8,4 @@ router.get('/', getMainText);
 router.get('/stats', validateInput, getAllStats);
 router.post('/comments', validateInput, getComments);
 
-module.exports = router;
+export default router
