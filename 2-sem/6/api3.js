@@ -20,4 +20,4 @@ const handlers3 = Router();
  handlers3.post('/login', addUser);
  handlers3.delete('/account/delete', deleteUser);
 
-export default handlers3
+export default handlers3;
