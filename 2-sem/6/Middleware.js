@@ -3,6 +3,7 @@ import morgan from 'morgan';
 export const myHelmet = helmet();
 export const myMorgan = morgan('dev');
 import {getApiKey} from "./services/services.js";
+import swaggerJsDoc from "swagger-jsdoc";
 
 
 export function validateInput(req, res, next){
@@ -41,3 +42,4 @@ export async function err(err, req, res, next){
     err.status = 500;
     res.status(err.status).send(err.message);
 }
+

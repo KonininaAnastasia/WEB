@@ -78,10 +78,10 @@ export async function updModel(id, data){
 
 export async function delApiKey(apikey){
     try {
-        const myApiKey = await db.collection("users").findOne({'apikey': apikey});
+        const myApiKey = await db.collection("keys").findOne({'apikey': apikey});
         console.log(myApiKey);
         if(myApiKey){
-           return await db.collection("users").deleteOne({'apikey': apikey});
+           return await db.collection("keys").deleteOne({'apikey': apikey});
         }
         else{
             return null;
@@ -93,7 +93,7 @@ export async function delApiKey(apikey){
 
 export async function getApiKey(){
     const keys = [];
-    let apiKey = await getAll("users");
+    let apiKey = await getAll("keys");
     apiKey.forEach((el) => {keys.push(el.apikey)});
     if(keys){
         return keys;

@@ -142,7 +142,7 @@ export function addUser(req, res, next){
                 "apikey": apikey
             };
 
-            addOne("users", result).then(() => {
+            addOne("keys", result).then(() => {
                 res.send(`your apikey ${apikey}`);
             })
         }else{
@@ -157,7 +157,7 @@ export async function deleteUser(req, res, next){
     try {
         const apikey = req.headers["apikey"];
         const apiKey = await getApiKey();
-        if(!apiKey.includes(apikey)){
+        if(!apikey.includes(apiKey)){
             if(await delApiKey(apikey)){
                 res.status(200).send("Api ключ удален");
             } else{

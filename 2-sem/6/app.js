@@ -4,6 +4,8 @@ import handlers3 from './api3.js';
 import express from 'express';
 import path from 'path';
 import bodyParser from "body-parser";
+import swaggerUI from "swagger-ui-express";
+import swaggerJsDoc from 'swagger-jsdoc';
 import {authorizationApi, badURL, myHelmet, myMorgan, err} from "./Middleware.js";
 
 const app = express();
@@ -23,6 +25,49 @@ app.use(bodyParser.json());
 app.use(express.static(path.resolve(dirname, 'public')));
 
 app.use('/api3', authorizationApi, handlers3);
+
+const swaggerOptions = {
+    definition: {
+        openapi: "3.0.0",
+        info:{
+            title: "Documentations",
+            version: "1.0.0",
+            contact: {
+                name: "KonininaAnastasia",
+            },
+        },
+        servers: [
+            {
+                url: `/api3`
+            },
+        ],
+        tags:[
+            {
+                name: "API",
+                description: "create and delete apikey",
+            },
+            {
+                name: "Models",
+                description: "CRUD in models",
+            },
+            {
+                name: "Comments",
+                description: "CRUD in comments",
+            },
+            {
+                name: "Home",
+                description: "Home page",
+            },
+        ],
+        host: "http://172.0.0.1:8000"
+    },
+    apis: ['documentations.yaml']
+}
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+
+
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
 //app.use('/api2', authorizationApi, handlers2);
 
