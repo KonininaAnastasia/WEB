@@ -20,7 +20,7 @@ getDocs();
 
 function updTable(){
         let list = document.getElementById('doc');
-        list.outerHTML = '<table id="models"></table>';
+        list.outerHTML = '<table id="doc"></table>';
         getDocs();
 }
 update.addEventListener("click", updTable);
@@ -31,8 +31,7 @@ async function sendName(){
     let name_user = {
         name: input.value
     }
-    let response = await fetch('http://127.0.0.1:8000/api3/login', 
-    {method: 'POST',headers:{"Content-type":"application/json"}, body: JSON.stringify(name_user)});
+    let response = await fetch('http://127.0.0.1:8000/api3/login', {method: 'POST',headers:{"Content-type":"application/json"}, body: JSON.stringify(name_user)})
     Api = await response.text();
 }
 
@@ -40,8 +39,10 @@ document.getElementById("table").addEventListener('click',function(event) {
     let target = event.target;
     if (target.className !== 'delete') return;
     let id = event.target.id;
-    if (Api) fetch(`http://127.0.0.1:8000/api3/models/${id}`, {method: 'DELETE', headers: {"apikey":`${Api}`}}).then(updTable)
-    else {alert("Введите имя..")}
+
+    if (Api) {fetch(`http://127.0.0.1:8000/api3/models/${id}`, {method: 'DELETE', headers: {"api-key":`${Api}`}}).then(updTable)}
+    else {alert("Введите имя..")};
+    console.log(Api);
 })
 
 

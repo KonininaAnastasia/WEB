@@ -3,37 +3,41 @@ import {ObjectId} from 'mongodb';
 import {getAll, findID, addOne, delOne, updModel, getApiKey, delApiKey} from "/StudesWeb/2-sem/6/services/services.js";
 
 export const getMainText = (req, res) => {
-    res.status(200).send("Hello")
+    res.status(200).send("Hello");
 }
 
-export const getAllStats = (req, res) => {
-    const name = req.headers['user-agent'];
-    let firstHtml =
-        '<table>' +
-        '<tr>' +
-        '<td>Name</td>' +
-        '<td>Count request</td>' +
-        '</tr>';
-    let secondHtml = '';
+// export const getAllStats = (req, res) => {
+//     const name = req.headers['user-agent'];
+//     let firstHtml =
+//         '<table>' +
+//         '<tr>' +
+//         '<td>Name</td>' +
+//         '<td>Count request</td>' +
+//         '</tr>';
+//     let secondHtml = '';
 
-    if (users[name]) {
-        users[name] += 1;
-    }else{
-        users[name] = 1;
-    }
-    for (const key in users) {
-        secondHtml +=
-            `<tr>
-                <td>${key}</td>
-                <td>${users[key]}</td>
-            </tr>`;
-    }
-    let resHtml = firstHtml + secondHtml + '</table>';
-    res.send(resHtml);
-}
+//     if (users[name]) {
+//         users[name] += 1;
+//     }else{
+//         users[name] = 1;
+//     }
+//     for (const key in users) {
+//         secondHtml +=
+//             `<tr>
+//                 <td>${key}</td>
+//                 <td>${users[key]}</td>
+//             </tr>`;
+//     }
+//     let resHtml = firstHtml + secondHtml + '</table>';
+//     res.send(resHtml);
+// }
 
-export async function getComments(req, res){
-    res.status(200).send(await getAll("comments"));
+export async function getComments(req, res, next){
+    try {
+        res.send(await getAll("comments"))
+    }catch (e){
+        next(e)
+    }
 }
 
 export async function postAddComments(req, res, next){
@@ -134,11 +138,11 @@ export async function updateModel(req, res, next) {
 export async function addUser(req, res, next){
     try {
         const data = req.body;
-        let users = await getAll("keys");
+        let keys = await getAll("keys");
         let apikey;
-        for (let usersKey in users) {
-            if(users[usersKey].name === data.name){
-                apikey = users[usersKey].apikey;
+        for (let usersKey in keys) {
+            if(keys[usersKey].name === data.name){
+                apikey = keys[usersKey].apikey;
             }else{
                 apikey = 0;
             }

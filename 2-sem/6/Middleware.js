@@ -5,6 +5,18 @@ export const myMorgan = morgan('dev');
 import {getApiKey} from "./services/services.js";
 
 
+export function originHeaderMiddleware(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, api-key");
+    if (req.method === "OPTIONS") {
+        res.status(200).send();
+    }
+    else {
+        next();
+    }
+}
+
 export function validateInput(req, res, next){
     const userInput = req.body;
     const regex = /[@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
@@ -42,14 +54,3 @@ export async function err(err, req, res, next){
     res.status(err.status).send(err.message);
 }
 
-export function originHeaderMiddleware(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, apikey");
-    if (req.method === "OPTIONS") {
-        res.status(200).send();
-    }
-    else {
-        next();
-    }
-}

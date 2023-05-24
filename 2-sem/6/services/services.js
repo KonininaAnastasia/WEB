@@ -77,7 +77,6 @@ export async function updModel(id, data){
 export async function delApiKey(apikey){
     try {
         const myApiKey = await db.collection("keys").findOne({'apikey': apikey});
-        console.log(myApiKey);
         if(myApiKey){
            return await db.collection("keys").deleteOne({'apikey': apikey});
         }
