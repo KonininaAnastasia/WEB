@@ -5,7 +5,7 @@ async function getDocs() {
     let response = await fetch('http://127.0.0.1:8000/api3/models');
     content = await response.json();
     let list = document.getElementById('doc');
-    if(content){
+    if(content.length){
         for (let arrayKey in content) {
             list.innerHTML+=
                 `<tr class="row">
