@@ -1,0 +1,78 @@
+main {
+    max-width: 38rem;
+    padding: 2rem;
+    margin: auto;
+}
+html {
+    max-width: 70ch;
+    padding: 3em 1em;
+    margin: auto;
+    line-height: 1.75;
+    font-size: 1.25em;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin: 3em 0 1em;
+}
+
+p,ul,ol {
+    margin-bottom: 2em;
+    color: #1d1d1d;
+    font-family: sans-serif;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    border-collapse: collapse;
+    color: #686461;
+  }
+  caption {
+    padding: 10px;
+    color: white;
+    background: #8FD4C1;
+    font-size: 18px;
+    text-align: left;
+    font-weight: bold;
+  }
+  th {
+    border-bottom: 3px solid #B9B29F;
+    padding: 10px;
+    text-align: left;
+  }
+  td {
+    padding: 10px;
+  }
+  tr:nth-child(odd) {
+    background: white;
+  }
+  tr:nth-child(even) {
+    background: #E8E6D1;
+  }
+    caption{
+        padding-bottom: 10px;
+    }
+    button{
+        border-radius: 5px;
+        border-color: #006400;
+        font-family: "Montserrat", sans-serif
+    }
+    input {
+        box-sizing: border-box;
+        width: 286px;
+        height: 50px;
+        border: 2px solid #006400;
+        border-radius: 5px;
+        margin-top: 0px;
+        padding-left: 1rem;
+    }
+    #send{
+        height: 50px;
+    }
+    #update{
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }

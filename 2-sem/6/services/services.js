@@ -33,11 +33,9 @@ export async function getAll(collection){
     try{
         const all  = db.collection(collection);
         let result;
-        if(collection==="models") {
-            result = await all.find({}, {projection: {name_model: 1}});
-        }else {
-            result = await all.find();
-        }
+
+        result = await all.find();
+        
         return  result.toArray();
     }catch(err) {
         return err;

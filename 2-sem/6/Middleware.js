@@ -3,7 +3,6 @@ import morgan from 'morgan';
 export const myHelmet = helmet();
 export const myMorgan = morgan('dev');
 import {getApiKey} from "./services/services.js";
-import swaggerJsDoc from "swagger-jsdoc";
 
 
 export function validateInput(req, res, next){
@@ -23,8 +22,8 @@ export function validateInput(req, res, next){
 export async function authorizationApi(req, res, next){
     const keys = await getApiKey();
     if (keys) {
-        if (keys.includes(req.headers["api-key"]) && req.method !== "GET" && req.url !== "/login") {
-            return res.status(403).send('access denied')
+        if (!keys.includes(req.headers["api-key"]) && req.method !== "GET" && req.url !== "/login") {
+            return res.status(403).send('access denied');
         }
         else{
             next();
@@ -43,3 +42,14 @@ export async function err(err, req, res, next){
     res.status(err.status).send(err.message);
 }
 
+export function originHeaderMiddleware(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, apikey");
+    if (req.method === "OPTIONS") {
+        res.status(200).send();
+    }
+    else {
+        next();
+    }
+}
