@@ -92,7 +92,7 @@ document.getElementById("addButton").addEventListener('click',()=>{
     <option value="sphere">Сфера</option>
     <option value="pyramid">Пирамида</option>
     </select></li>
-    <li><input id="color" type="color"></li>
+    <li><input id="color" type="color" value="#bb8fd4"></li>
     <li><input type="number" id="size" min="1" max="10" placeholder="Размер модели" required></li>
     <li><input id="name_model" type="text" placeholder="Имя модели" required></li>
     <li><input id="descriptions" placeholder="Описание" required></input></li>

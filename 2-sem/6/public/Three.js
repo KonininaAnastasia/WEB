@@ -86,5 +86,3 @@ function modelview (event){
     }
     animate();
 }
-document.getElementById("table").addEventListener('click',modelview);
-document.getElementById("addModel").addEventListener('click',modelview);
