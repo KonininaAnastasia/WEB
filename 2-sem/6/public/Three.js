@@ -1,19 +1,20 @@
 import * as THREE from "https://unpkg.com/three/build/three.module.js";
 
 document.getElementById("table").addEventListener('click',modelview);
-document.getElementById("addModel").addEventListener('click',modelview);
-document.getElementById("addModel").addEventListener('blur',modelview);
-document.getElementById("addModel").addEventListener('blur',modelview);
-document.getElementById("addModel").addEventListener('blur',modelview);
 
+document.getElementById("addButton").addEventListener("click", ()=>{
+    document.getElementById("color").addEventListener("blur",modelview)
+    document.getElementById("selectType").addEventListener("blur",modelview)
+    document.getElementById("size").addEventListener("blur",modelview)
+})
 
 function modelview (event){
-       let canvasWrapper;
-       let typeGeometry;
-       let colorGeometry;
-       let geometry;
-       let sizeGeometry;
-    if(event.target.id==="vie"){
+    let canvasWrapper;
+    let typeGeometry;
+    let colorGeometry;
+    let geometry;
+    let sizeGeometry;
+    if(event.target.id==="color" || event.target.id==="selectType" || event.target.id==="size"){
         typeGeometry = document.getElementById("selectType").value;
         colorGeometry = document.getElementById("color").value;
         sizeGeometry = document.getElementById("size").value;
@@ -22,7 +23,7 @@ function modelview (event){
         add.outerHTML ="<div id='hCan'><div id=\"canvas-wrapper\"></div></div>";
         canvasWrapper = document.getElementById("canvas-wrapper");;
         //console.log(typeGeometry);
-        //console.log(colorGeometry);
+        //console.log(colorGeometry); 
     }
     else if(event.target.className==="show") {
         typeGeometry = document.getElementById("typTable").innerHTML;

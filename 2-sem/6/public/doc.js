@@ -33,10 +33,9 @@ async function sendName(){
         name: input
     }
     if(input){
-        let response = await fetch('http://127.0.0.1:8000/api3/login', {method: 'POST',headers:{"Content-type":"application/json"}, body: JSON.stringify(name_user)})
-            document.getElementById("addButton").removeAttribute("disabled")
-            //let notify = document.getElementById("notify")
-        Api = await response.text()
+        let response = await fetch('http://127.0.0.1:8000/api3/login', {method: 'POST',headers:{"Content-type":"application/json"}, body: JSON.stringify(name_user)});
+        document.getElementById("addButton").removeAttribute("disabled");
+        Api = await response.text();
     }
 }
 
@@ -65,7 +64,7 @@ document.getElementById("table").addEventListener('click',function(event) {
             if (content[arrayKey]._id === event.target.name){
                 name = event.target.name;
                 flex_div = document.getElementById("flex-div");
-                flex_div.outerHTML = `<div id="flex-div"><table>
+                flex_div.outerHTML = `<div id="flex-div"><table id="table1">
                 <caption>Модель ${content[arrayKey].name_model}</caption> 
                 <tr><td>Имя:</td><td>${content[arrayKey].name}</td></tr>
                 <tr><td>Имя модели:</td><td>${content[arrayKey].name_model}</td></tr>
@@ -99,7 +98,6 @@ document.getElementById("addButton").addEventListener('click',()=>{
     <li><input id="comments" placeholder="Комментарий" required></input></li>
     </ul>
     <span><button type="button" id="submit">Отправить модель</button>
-    <button id="vie" type="button">Посмотеть модель</button></span>
     </form></div>
     <div id="hCan"></div>
     </div>`
