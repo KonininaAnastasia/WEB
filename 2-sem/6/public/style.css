@@ -1,19 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
 main {
     max-width: 38rem;
-    padding: 2rem;
-    margin: auto;
 }
 html {
-    max-width: 70ch;
-    padding: 3em 1em;
-    margin: auto;
+    padding-left: 30px;
+
     line-height: 1.75;
     font-size: 1.25em;
 }
 h1,h2,h3,h4,h5,h6 {
     margin: 3em 0 1em;
 }
-
 p,ul,ol {
     margin-bottom: 2em;
     color: #1d1d1d;
@@ -33,15 +31,10 @@ table {
   caption {
     padding: 10px;
     color: white;
-    background: #8FD4C1;
+    background: #bb8fd4;
     font-size: 18px;
     text-align: left;
     font-weight: bold;
-  }
-  th {
-    border-bottom: 3px solid #B9B29F;
-    padding: 10px;
-    text-align: left;
   }
   td {
     padding: 10px;
@@ -76,3 +69,65 @@ table {
         margin-bottom: 10px;
         margin-top: 20px;
     }
+
+    #modelup{
+      overflow: auto;
+      height: 400px;
+    }
+  #modelup::-webkit-scrollbar {
+      display: none;
+  }
+  
+  #addButton{
+      position: fixed;
+      bottom: 10px;
+      left: 90%;
+      width: 100px;
+      height: 50px;
+  }
+  #canvas-wrapper, #can-wrap{
+      min-width: 200px;
+      height: 200px;
+      max-height: 300px;
+      border: 2px solid #7d85ba;
+      margin-top: 10px;
+      
+  }
+  #form li{
+      margin-bottom: 10px;
+      margin-top: 10px;
+      list-style-type: none;
+  }
+  #form textarea, #form select, #form option{
+      border: 2px solid #7d85ba;
+      border-radius: 5px;
+      width: 286px;
+      min-height: 35px;
+      font-size: 14px;
+  }
+  
+  #addModel p{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    border-collapse: collapse;
+    color: #686461;
+    font-size: 1.3em;
+    margin: 0;
+  }
+
+  #flex-div{
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+  }
+
+  ul, li{
+    margin: 0;
+    padding: 0;
+  }
+
+  #formdiv{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
