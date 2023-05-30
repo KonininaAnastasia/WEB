@@ -2,6 +2,10 @@ import * as THREE from "https://unpkg.com/three/build/three.module.js";
 
 document.getElementById("table").addEventListener('click',modelview);
 document.getElementById("addModel").addEventListener('click',modelview);
+document.getElementById("addModel").addEventListener('blur',modelview);
+document.getElementById("addModel").addEventListener('blur',modelview);
+document.getElementById("addModel").addEventListener('blur',modelview);
+
 
 function modelview (event){
        let canvasWrapper;
