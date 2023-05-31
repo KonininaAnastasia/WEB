@@ -8,6 +8,21 @@ document.getElementById("addButton").addEventListener("click", ()=>{
     document.getElementById("size").addEventListener("blur",modelview)
 })
 
+document.getElementById("table").addEventListener('click',()=>{
+    document.getElementById("redact").addEventListener('click',modelview)
+    document.getElementById("change").addEventListener('click', ()=>{
+        document.getElementById("colTable1").addEventListener('blur',modelview)
+        document.getElementById("typTable1").addEventListener('blur',modelview)
+        document.getElementById("sizTable1").addEventListener('blur',modelview)
+    })
+})
+document.getElementById("table").addEventListener('click',()=>{
+
+        document.getElementById("colTable1").addEventListener('blur',modelview)
+        document.getElementById("typTable1").addEventListener('blur',modelview)
+        document.getElementById("sizTable1").addEventListener('blur',modelview)
+    })
+
 function modelview (event){
     let canvasWrapper;
     let typeGeometry;
@@ -30,6 +45,14 @@ function modelview (event){
         colorGeometry=document.getElementById("colTable").innerHTML;
         sizeGeometry=document.getElementById("sizTable").innerHTML;
         canvasWrapper = document.getElementById("can-wrap");;
+    }else if(event.target.id==="redact" || event.target.id==="colTable1" || event.target.id==="typTable1" || event.target.id==="sizTable1"){
+        typeGeometry = document.getElementById("typTable1").value
+        colorGeometry=document.getElementById("colTable1").value
+        sizeGeometry=document.getElementById("colTable1").value
+        sizeGeometry=document.getElementById("sizTable1").value
+        let add = document.getElementById("can-wrap1")
+        add.outerHTML ="<div id='can-wrap1'></div>"
+        canvasWrapper = document.getElementById("can-wrap1");
     }
 
     const scene = new THREE.Scene();

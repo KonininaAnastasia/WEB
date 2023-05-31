@@ -36,6 +36,9 @@ async function sendName(){
         let response = await fetch('http://127.0.0.1:8000/api3/login', {method: 'POST',headers:{"Content-type":"application/json"}, body: JSON.stringify(name_user)});
         document.getElementById("addButton").removeAttribute("disabled");
         Api = await response.text();
+        if(checkName === input){
+            document.getElementById("editButton").removeAttribute("disabled");
+        }
     }
 }
 
@@ -51,6 +54,7 @@ document.getElementById("table").addEventListener('click',function(event) {
 
 
 let name = undefined;
+let checkName;
 document.getElementById("table").addEventListener('click',function(event) {
     let flex_div;
     let target = event.target;
@@ -63,8 +67,9 @@ document.getElementById("table").addEventListener('click',function(event) {
         for (let arrayKey in content) {
             if (content[arrayKey]._id === event.target.name){
                 name = event.target.name;
+                checkName = content[arrayKey].name
                 flex_div = document.getElementById("flex-div");
-                flex_div.outerHTML = `<div id="flex-div"><table id="table1">
+                flex_div.outerHTML = `<div id="flex-div"><table>
                 <caption>Модель ${content[arrayKey].name_model}</caption> 
                 <tr><td>Имя:</td><td>${content[arrayKey].name}</td></tr>
                 <tr><td>Имя модели:</td><td>${content[arrayKey].name_model}</td></tr>
@@ -73,15 +78,21 @@ document.getElementById("table").addEventListener('click',function(event) {
                 <tr><td>Размер:</td><td id="sizTable">${content[arrayKey].size}</tdid></tr>
                 <tr><td>Описание:</td><td>${content[arrayKey].descriptions}</td></tr> 
                 <tr><td>Комментарии:</td><td>${content[arrayKey].comments}</td></tr>
-                <tr><td>Время создания:</td><td>${content[arrayKey].time_create}</td></tr></table>
+                <tr><td>Время создания:</td><td>${content[arrayKey].time_create}</td></tr>
+                <tr><td><button id="editButton" name="${name}" disabled>Редактировать модель</button></td></tr></table>
                 <div id="can-wrap"></div></div>`
             };
+            console.log(checkName);
+            console.log(input);
+        }
+        if(checkName === input){
+            document.getElementById("editButton").removeAttribute("disabled");
         }
     }
 })
 
 document.getElementById("addButton").addEventListener('click',()=>{
-    let add = document.getElementById("addModel")
+    let add = document.getElementById("addModel");
          add.innerHTML+=`<div id="formdiv">
     <form id="form">
     <p>Добавление модели</p><div>
@@ -97,7 +108,7 @@ document.getElementById("addButton").addEventListener('click',()=>{
     <li><input id="descriptions" placeholder="Описание" required></input></li>
     <li><input id="comments" placeholder="Комментарий" required></input></li>
     </ul>
-    <span><button type="button" id="submit">Отправить модель</button>
+    <span><button id="submit">Отправить модель</button>
     </form></div>
     <div id="hCan"></div>
     </div>`
@@ -132,3 +143,67 @@ document.getElementById("addModel").addEventListener('click',async (event)=>{
 
     }
 })
+
+
+document.getElementById("table").addEventListener('click', async function(event) {
+
+        if(event.target.id==="editButton") {
+            for (let arrayKey in content) {
+                if (content[arrayKey]._id === event.target.name){
+                    let flex_div = document.getElementById("flex-div");
+                    flex_div.outerHTML =`<div id="flex-div">
+                    <form>
+                    <ul id="change"></ul>
+                    </form>
+                     <div id="can-wrap1"></div><div>`
+                    let change= document.getElementById("change");
+                    if(content[arrayKey].type==="cube"){
+                        change.innerHTML +=`
+                    <li><select id="typTable1">
+                    <option value="cube">Куб</option>
+                    <option value="sphere">Сфера</option>
+                    <option value="pyramid">Пирамида</option>
+                    </select></li>`
+                    }else if(content[arrayKey].type==="sphere"){
+                        change.innerHTML +=`
+                    <li><select id="typTable1">
+                    <option value="sphere">Сфера</option>
+                    <option value="cube">Куб</option>
+                    <option value="pyramid">Пирамида</option>
+                    </select></li>`
+                    }else{
+                        change.innerHTML +=`
+                    <li><select id="typTable1">
+                    <option value="pyramid">Пирамида</option>
+                    <option value="cube">Куб</option>
+                    <option value="sphere">Сфера</option>
+                    </select></li>`
+                    }
+                    change.innerHTML += `
+                    <li><input id="colTable1" value="${content[arrayKey].color}" type="color"></li>
+                    <li><input type="number" id="sizTable1" min=1 max=10 value="${content[arrayKey].size}" required></li>
+                    <li><input id="name_model1" type="text" value="${content[arrayKey].name_model}" required></li>
+                    <li><input id="descriptions1" placeholder="Описание" value="${content[arrayKey].descriptions}"</input></li>
+                    <li><input  id="comments1" placeholder="Комментарий" value="${content[arrayKey].comments}"</input></li>
+                    <li><button id="submit1" name="${content[arrayKey]._id}">Сохранить</button></li>`
+                }}
+                
+
+    }}
+)
+
+document.getElementById("table").addEventListener('click', async ()=>{
+document.getElementById("submit1").addEventListener('click', async function(event) {
+
+        let updModel = {
+            name_model:document.getElementById("name_model1").value,
+            type:document.getElementById("typTable1").value,
+            color:document.getElementById("colTable1").value,
+            size:document.getElementById("sizTable1").value,
+            descriptions:document.getElementById("descriptions1").value,
+            comments:document.getElementById("comments1").value
+        }
+        await fetch(`http://127.0.0.1:8000/api3/models/${event.target.name}`, {method: 'PUT', headers: {"api-key": `${Api}`, "Content-type": "application/json"},
+            body: JSON.stringify(updModel)
+        })
+})})
