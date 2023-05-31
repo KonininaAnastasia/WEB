@@ -129,8 +129,6 @@ table {
   margin-top: 10px;
 }
 
-
-
   ul, li{
     margin: 0;
     padding: 0;
@@ -141,3 +139,7 @@ table {
     align-items: center;
     gap: 40px;
   }
+
+#flex-div table{
+  margin-left: 40px;
+}
